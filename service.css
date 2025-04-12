@@ -1,0 +1,93 @@
+.navbar {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    z-index: 1;
+    margin-top: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+  }
+  
+  body {
+    padding-top: 20px;
+  }
+  
+  .navbar-brand img {
+    height: 100px;
+    width: 110px;
+  }
+  
+  .nav-link {
+    color: #333;
+    font-weight: 500;
+    margin-right: 1rem;
+  }
+  
+  .nav-link:hover,
+  .nav-link:focus {
+    color: #fff;
+    background-color: #95712327;
+    border-radius: 8px;
+  }
+  
+  /* Make image smaller on mobile */
+  @media screen and (max-width: 768px) {
+    .navbar-brand img {
+      height: 60px;  /* Smaller image size on mobile */
+      width: 80px;   /* Smaller image size on mobile */
+    }
+  
+    .navbar-toggler {
+      border-color: #b78b2bce;
+    }
+  
+    .nav-link {
+      font-size: 14px;  /* Smaller font size for mobile */
+    }
+  
+    .navbar-collapse {
+      padding-top: 10px;
+    }
+  
+    /* Adjust the button inside the navbar for mobile */
+    .d-none.d-lg-block {
+      display: none; /* Hide the contact button on mobile */
+    }
+  
+    /* Make the navbar layout more compact */
+    .navbar-nav {
+      text-align: center;
+      margin-top: 10px;
+    }
+  
+    .navbar-nav .nav-item {
+      margin-bottom: 10px;
+    }
+  }
+  .footer{
+    background-color: #b78b2bce;
+  }  
+
+
+
+
+
+
+/* تخصيص الزر */
+.btn-custom {
+    background-color: #b78b2bce; /* اللون المطلوب */
+    color: #fff; /* لون النص داخل الزر */
+    border-radius: 25px; /* حواف دائرية */
+    padding: 10px 30px; /* حجم الزر الداخلي */
+    text-align: center; /* توسيط النص داخل الزر */
+    display: inline-block;
+}
+
+/* عند المرور فوق الزر */
+.btn-custom:hover {
+    background-color: #b78b2bf4; /* لون التمرير فوق الزر */
+    color: #fff;
+    text-decoration: none;
+}
