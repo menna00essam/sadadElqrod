@@ -887,80 +887,58 @@ font-weight: normal; /* ضبط الوزن ليكون ثابت */
   }
 }
 
-.my-5.section-hero {
-  padding: 40px 0;
-}
 
-.container {
-  max-width: 1140px;
-}
 
-.row {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-}
 
-/* النصوص */
-.fw-bold {
-  font-size: 2.5rem;
-  font-weight: bold;
-}
 
-.lead {
-  font-size: 1.1rem;
-  color: #555;
-  line-height: 1.8;
-  font-family: 'Cairo', sans-serif;
-}
 
-/* تعديل المظهر في الشاشات الصغيرة (تابلت و موبايل) */
-@media (max-width: 768px) {
-  .fw-bold {
-    font-size: 2rem; /* تقليل حجم الخط في التابلت */
-    margin-bottom: 15px; /* مسافة بين العنوان والنص */
-  }
 
-  .lead {
-    font-size: 1rem; /* تقليل حجم الخط في التابلت */
-  }
 
-  .row {
+/* تغيير ترتيب الأعمدة في الشاشات الصغيرة */
+@media (max-width: 991px) {
+  .hero-row {
+    display: flex;
     flex-direction: column;
-    gap: 20px; /* مسافة بين النصوص */
-    text-align: center;
+    align-items: center;
   }
 
-  .col-lg-5, .col-md-12 {
-    text-align: center;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
+  .col-lg-5 {
+    width: 100%; /* جعل الأعمدة تأخذ عرض كامل في الشاشات الصغيرة */
+    margin-bottom: 20px; /* إضافة مسافة بين الأعمدة */
   }
 
-  .img-fluid {
-    width: 90%;
-    margin-top: 20px; /* مسافة بين النص والصورة */
+  /* تخصيص المسافات بين الأعمدة */
+  .hero-content-left,
+  .hero-content-right {
+    margin-bottom: 20px;
   }
 }
 
-@media (max-width: 480px) {
-  .fw-bold {
-    font-size: 1.8rem; /* تقليل حجم الخط في الموبايل */
-    margin-bottom: 20px; /* مسافة بين العنوان والنص */
+/* تخصيص المسافة بين النص الأول والنص الثاني */
+.hero-content-left,
+.hero-content-right {
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 10px;
+  flex: 1;
+  margin-bottom: 30px; /* إضافة مسافة بين الأعمدة */
+}
+
+@media (max-width: 991px) {
+  .hero-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  .lead {
-    font-size: 0.9rem; /* تقليل حجم الخط في الموبايل */
+  .col-lg-5 {
+    width: 100%; /* جعل الأعمدة تأخذ عرض كامل في الشاشات الصغيرة */
+    margin-bottom: 20px; /* إضافة مسافة بين الأعمدة */
   }
 
-  .col-lg-5, .col-md-12 {
-    padding: 15px;
-  }
-
-  .img-fluid {
-    width: 100%;
-    margin-top: 20px; /* مسافة بين النص والصورة */
+  /* تخصيص المسافة بين الأعمدة */
+  .hero-content-left,
+  .hero-content-right {
+    margin-bottom: 30px; /* إضافة مسافة بين النصوص */
   }
 }
