@@ -37,7 +37,7 @@
             <h2>اتصل بنا</h2>
         </div>
 
-        <form id="contact-form" class="contact-form" onsubmit="sendEmail(event)" method="POST">
+        <form id="contact-form" class="contact-form" onsubmit="sendForm(event)" method="POST">
             <label for="name">اسم العميل:</label>
             <input type="text" id="name" name="name" required>
             <span class="error-message" id="name-error"></span>
@@ -50,7 +50,7 @@
             <input type="text" id="bank_name" name="bank_name" required>
             <span class="error-message" id="bank-error"></span>
 
-            <label for="delayed_payment">هل أنت متعثر؟</label>
+            <label for="delayed_payment">هل لديك تعثر؟</label>
             <div class="radio-group">
                 <div class="radio-option">
                     <input type="radio" id="yes" name="delayed_payment" value="نعم" required>
@@ -109,17 +109,12 @@
         </div>
     </footer>
 
-    <script type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-</script>  
-  <script type="text/javascript">
-        (function(){
-            emailjs.init("758Crz-Yfu3sqKwLR"); // استبدل هذا بالمفتاح العام الخاص بك
-        })();
+    <script>
+        // إرسال البيانات إلى SheetDB عبر API و EmailJS في نفس الوقت
+        function sendForm(event) {
+            event.preventDefault();  // منع إرسال النموذج بالطريقة التقليدية
 
-        function sendEmail(event) {
-            event.preventDefault();
-
+            // جمع بيانات النموذج
             const formData = new FormData(document.getElementById("contact-form"));
             const data = {
                 name: formData.get("name"),
@@ -128,17 +123,45 @@
                 delayed_payment: formData.get("delayed_payment")
             };
 
-            emailjs.send("service_3tl4ts8", "template_ceu54rm", data)
-    .then(function(response) {
-        console.log("Success", response);
-        alert("تم إرسال الطلب بنجاح!");
-    }, function(error) {
-        console.log("Error: ", error);
-        console.log("Error details:", error.text);  // هنا يمكنك طباعة المزيد من التفاصيل حول الخطأ
-        alert("حدث خطأ أثناء إرسال النموذج. حاول مرة أخرى لاحقًا.");
-    });
+            // 1. إرسال البيانات إلى SheetDB
+            fetch("https://sheetdb.io/api/v1/ye8edsdmsogje", {  // استبدل برابط API الخاص بك من SheetDB
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                console.log("استجابة من SheetDB:", response); // أضف هذا السطر
+                return response.json();
+            })
+            .then(data => {
+                console.log("البيانات المستلمة من SheetDB:", data); // أضف هذا السطر
 
+                // 2. إرسال البيانات عبر EmailJS
+                emailjs.send("service_3tl4ts8", "template_ceu54rm", data)
+                .then(function(response) {
+                    console.log("تم إرسال البيانات عبر EmailJS:", response);
+                    alert("تم إرسال الطلب بنجاح!");
+                    document.getElementById("contact-form").reset();  // إعادة تعيين النموذج
+                }, function(error) {
+                    console.log("خطأ في إرسال البيانات عبر EmailJS:", error);
+                    alert("حدث خطأ أثناء إرسال النموذج عبر EmailJS. حاول مرة أخرى لاحقًا.");
+                });
+
+            })
+            .catch(error => {
+                console.error("حدث خطأ أثناء إرسال البيانات إلى SheetDB:", error);
+                alert("حدث خطأ أثناء إرسال البيانات إلى SheetDB. حاول مرة أخرى لاحقًا.");
+            });
         }
+    </script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("758Crz-Yfu3sqKwLR"); // استبدل هذا بالمفتاح العام الخاص بك
+        })();
     </script>
 </body>
 </html>
