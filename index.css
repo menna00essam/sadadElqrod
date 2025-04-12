@@ -1,36 +1,97 @@
+/* Navbar styles */
 .navbar {
-background-color: #fff;
-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-z-index: 1;
-margin-top: 0; 
-position: fixed; 
-top: 0; 
-left: 0;
-width: 100%; 
-padding: 10px 0; 
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  z-index: 1;
+  margin-top: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 0;
 }
 
 body {
-padding-top: 10px; 
+  padding-top: 10px;
 }
 
+.navbar-brand img {
+  height: 100px;
+  width: 110px;
+}
+
+.nav-link {
+  color: #333;
+  font-weight: 500;
+  margin-right: 1rem;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: #fff;
+  background-color: #95712327;
+  border-radius: 8px;
+}
+
+/* Make image smaller on mobile */
+@media screen and (max-width: 768px) {
   .navbar-brand img {
-    height: 100px;
-    width: 110px;
+    height: 60px;  /* Smaller image size on mobile */
+    width: 80px;   /* Smaller image size on mobile */
+  }
+
+  .navbar-toggler {
+    border-color: #b78b2bce;
   }
 
   .nav-link {
-    color: #333;
-    font-weight: 500;
-    margin-right: 1rem;
+    font-size: 14px;  /* Smaller font size for mobile */
   }
 
-  .nav-link:hover,
-  .nav-link:focus {
-    color: #fff;
-  background-color: #95712327; 
-    border-radius: 8px;
+  .navbar-collapse {
+    padding-top: 10px;
   }
+
+  /* Adjust the button inside the navbar for mobile */
+  .d-none.d-lg-block {
+    display: none; /* Hide the contact button on mobile */
+  }
+
+  /* Make the navbar layout more compact */
+  .navbar-nav {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .navbar-nav .nav-item {
+    margin-bottom: 10px;
+  }
+}
+
+/* Floating button */
+.floating-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #b78b2bce;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.floating-btn:hover {
+  background-color: #d88e4d;
+}
+
+.floating-btn:active {
+  transform: scale(0.98);
+}
+
 
   /* .btn-contact {
     background-color: #957123;
@@ -496,6 +557,28 @@ font-weight: normal; /* ضبط الوزن ليكون ثابت */
 }
 
 /* تعديل النص والعناوين */
+/* Styling for Finance Section */
+.finance {
+  position: relative;
+  background-color: #f8f9fa;
+  padding: 50px 0;
+}
+
+.finance_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* إضاءة داكنة للطبقة الخلفية */
+}
+
+.finance_inner {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
 .finance_inner h2 {
   font-size: 36px;
   font-weight: bold;
@@ -516,93 +599,368 @@ font-weight: normal; /* ضبط الوزن ليكون ثابت */
   margin-bottom: 20px;
 }
 
+/* تخصيص زر "تقدّم بطلبك الآن" */
 .applynow_custom_btn_parent {
-  margin-top: 50px;
+  margin-top: -180px; /* زيادة المسافة بين الزر والنص */
 }
 
+/* تعديل النص "خصم" و "20%" */
 .discount-text {
-position: absolute;
-top: 30%; /* تغيير الموضع لتحريك النص إلى الأعلى */
-left: 50%;
-transform: translateX(-50%);
-text-align: center; /* محاذاة النص في الوسط */
+  position: relative;
+  top: 10%; /* تغيير الموضع لتحريك النص إلى الأعلى */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center; /* محاذاة النص في الوسط */
 }
 
 .discount-title {
-font-size: 52px;
-font-weight: bold;
-color: #b78b2bce;
-text-align: center;
-margin-bottom: 0; /* منع المسافة الزائدة تحت النص */
+  font-size: 52px;
+  font-weight: bold;
+  color: #b78b2bce;
+  text-align: center;
+  margin-bottom: 20px; /* زيادة المسافة أسفل "خصم" */
 }
 
 .discount-amount {
-font-size: 200px; /* حجم أكبر للـ "20%" */
-font-weight: bold;
-color: #b78b2bce;
-animation: slideIn 3s ease-out infinite alternate;
-margin-top: 0; /* إزالة المسافة بين النص المتحرك والنص الثابت */
+  font-size: 150px; /* تصغير حجم "20%" */
+  font-weight: bold;
+  color: #b78b2bce;
+  animation: slideIn 3s ease-out infinite alternate;
+  margin-top: -30px; /* تقليل المسافة بين النص المتحرك والنص الثابت */
 }
 
+/* تعديل النص "بمناسبة افتتاح فرع أبها" ليظهر تحت 20% */
 .opening-note {
-font-size: 42px; /* حجم أصغر للجزء الثابت */
-color: #b78b2bce;
-margin-top: 10px; /* المسافة بين النصين */
-text-align: center;
-position: absolute;
-top: 70%; /* وضع النص تحت النص المتحرك */
-left: 50%;
-transform: translateX(-50%); /* محاذاة النص في الوسط */
+  font-size: 42px;
+  color: #b78b2bce;
+  margin-top: 10px; /* زيادة المسافة بين النص "20%" و "بمناسبة افتتاح فرع أبها" */
+  text-align: center;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* التأثير الحركي للنص */
 @keyframes slideIn {
-0% {
-  opacity: 0;
-  top: 30%;
-}
-50% {
-  opacity: 1;
-  top: 40%;
-}
-100% {
-  opacity: 0;
-  top: 30%;
-}
-}
-
-/* تعديل المسافة بين "خصم" و "20%" */
-.discount-title {
-font-size: 52px;
-font-weight: bold;
-color: #FFD700;
-text-align: center;
-margin-bottom: -40px; /* تقليل المسافة أسفل "خصم" */
+  0% {
+    opacity: 0;
+    top: 30%;
+  }
+  50% {
+    opacity: 1;
+    top: 40%;
+  }
+  100% {
+    opacity: 0;
+    top: 30%;
+  }
 }
 
-.discount-amount {
-font-size: 200px; /* حجم أكبر للـ "20%" */
-font-weight: bold;
-color: #FFD700;
-animation: slideIn 3s ease-out infinite alternate;
-margin-top: -70px; /* إزالة المسافة بين النص المتحرك والنص الثابت */
+/* التأثير على زر التقديم */
+.applynow_custom_btn {
+  font-size: 20px;
+  padding: 10px 30px;
+  background-color: #b78b2bce;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
 }
 
-/* تعديل المسافة بين الزر والنص "بمناسبة افتتاح فرع أبها" */
-.applynow_custom_btn_parent {
-margin-top: 150px; /* تقليل المسافة بين الزر والنص */
+.applynow_custom_btn:hover {
+  background-color: #957123;
 }
 
-/* تقليل المسافة بين "بمناسبة افتتاح فرع أبها" و الزر */
-.opening-note {
-font-size: 42px;
-color: #FFD700;
-margin-top: 5px; /* تقليل المسافة بين النص والزر */
-text-align: center;
-position: absolute;
-top: 65%; /* تقليل المسافة بين النص والزر */
-left: 50%;
-transform: translateX(-50%);
+/* التعديل ليظهر بشكل جيد في الشاشات الصغيرة */
+@media (max-width: 768px) {
+  .discount-title {
+    font-size: 40px;
+  }
+  .discount-amount {
+    font-size: 100px; /* تصغير حجم "20%" في الشاشات الصغيرة */
+  }
+  .opening-note {
+    font-size: 36px;
+  }
+  .applynow_custom_btn {
+    font-size: 18px;
+    padding: 8px 25px;
+  }
+}
+
+/* التعديل للهواتف */
+@media (max-width: 480px) {
+  .discount-title {
+    font-size: 32px;
+  }
+  .discount-amount {
+    font-size: 80px; /* تصغير أكبر في الشاشات الصغيرة */
+  }
+  .opening-note {
+    font-size: 30px;
+  }
+  .applynow_custom_btn {
+    font-size: 16px;
+    padding: 7px 20px;
+  }
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+.my-5.section-hero {
+  padding: 5rem 0;
+}
+
+.my-5.section-hero .container {
+  max-width: 1140px;
+}
+
+.row.align-items-center {
+  display: flex;
+  justify-content: center;
+}
+
+/* النص */
+.fw-bold {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.lead {
+  font-size: 1.2rem;
+  color: #000000;
+  line-height: 1.8;
+  font-family: 'Cairo', sans-serif;
+}
+
+/* الصورة */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* تحسين المظهر في الشاشات الصغيرة */
+@media (max-width: 768px) {
+  .fw-bold {
+    font-size: 2rem; /* تقليل حجم الخط في التابلت */
+    margin-bottom: 15px; /* إضافة مسافة بين النصوص */
+  }
+
+  .lead {
+    font-size: 1rem; /* تقليل حجم الخط في التابلت */
+  }
+
+  .row.align-items-center {
+    flex-direction: column;
+  }
+
+  /* تعديل ترتيب الأعمدة بين النص والصورة */
+  .col-lg-6, .col-md-12 {
+    text-align: center;
+  }
+
+  /* إضافة مسافة بين النص والصورة في الموبايل والتابلت */
+  .img-fluid {
+    width: 80%;
+    margin-top: 20px;
+  }
+}
+
+/* تحسين المظهر في الشاشات الصغيرة جداً (الموبايل) */
+@media (max-width: 480px) {
+  .fw-bold {
+    font-size: 1.8rem; /* تقليل حجم الخط في الموبايل */
+    margin-bottom: 20px; /* إضافة مسافة بين النصوص */
+  }
+
+  .lead {
+    font-size: 0.9rem; /* تقليل حجم الخط في الموبايل */
+  }
+
+  .img-fluid {
+    width: 90%;
+    margin-top: 20px;
+  }
+
+  /* تقليل المسافة بين النص والصورة في الشاشات الصغيرة جداً */
+  .my-5.section-hero {
+    padding: 3rem 0;
+  }
+}
+
+
+
+
+.my-5.section-hero1 {
+  padding: 5rem 0;
+}
+
+.my-5.section-hero1 .container {
+  max-width: 1140px;
+}
+
+.row.align-items-center {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* النص */
+.fw-bold {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.lead {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.8;
+  font-family: 'Cairo', sans-serif;
+}
+
+/* الصورة */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* تحسين المظهر في الشاشات الصغيرة */
+@media (max-width: 768px) {
+  .fw-bold {
+    font-size: 2rem; /* تقليل حجم الخط في التابلت */
+    margin-bottom: 15px; /* إضافة مسافة بين النصوص */
+  }
+
+  .lead {
+    font-size: 1rem; /* تقليل حجم الخط في التابلت */
+  }
+
+  .row.align-items-center {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* تعديل ترتيب الأعمدة بين النص والصورة */
+  .col-lg-6, .col-md-12 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .img-fluid {
+    width: 90%;
+    margin-top: 20px; /* مسافة بين النص والصورة */
+  }
+}
+
+/* تحسين المظهر في الشاشات الصغيرة جداً (الموبايل) */
+@media (max-width: 480px) {
+  .fw-bold {
+    font-size: 1.8rem; /* تقليل حجم الخط في الموبايل */
+    margin-bottom: 20px; /* إضافة مسافة بين النصوص */
+  }
+
+  .lead {
+    font-size: 0.9rem; /* تقليل حجم الخط في الموبايل */
+  }
+
+  .img-fluid {
+    width: 90%;
+    margin-top: 20px; /* مسافة بين النص والصورة */
+  }
+
+  .my-5.section-hero1 {
+    padding: 3rem 0;
+  }
+}
+
+.my-5.section-hero {
+  padding: 40px 0;
+}
+
+.container {
+  max-width: 1140px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* النصوص */
+.fw-bold {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.lead {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.8;
+  font-family: 'Cairo', sans-serif;
+}
+
+/* تعديل المظهر في الشاشات الصغيرة (تابلت و موبايل) */
+@media (max-width: 768px) {
+  .fw-bold {
+    font-size: 2rem; /* تقليل حجم الخط في التابلت */
+    margin-bottom: 15px; /* مسافة بين العنوان والنص */
+  }
+
+  .lead {
+    font-size: 1rem; /* تقليل حجم الخط في التابلت */
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 20px; /* مسافة بين النصوص */
+    text-align: center;
+  }
+
+  .col-lg-5, .col-md-12 {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+
+  .img-fluid {
+    width: 90%;
+    margin-top: 20px; /* مسافة بين النص والصورة */
+  }
+}
+
+@media (max-width: 480px) {
+  .fw-bold {
+    font-size: 1.8rem; /* تقليل حجم الخط في الموبايل */
+    margin-bottom: 20px; /* مسافة بين العنوان والنص */
+  }
+
+  .lead {
+    font-size: 0.9rem; /* تقليل حجم الخط في الموبايل */
+  }
+
+  .col-lg-5, .col-md-12 {
+    padding: 15px;
+  }
+
+  .img-fluid {
+    width: 100%;
+    margin-top: 20px; /* مسافة بين النص والصورة */
+  }
+}
