@@ -75,19 +75,17 @@
 
 
 
-/* تخصيص الزر */
 .btn-custom {
-    background-color: #b78b2bce; /* اللون المطلوب */
-    color: #fff; /* لون النص داخل الزر */
-    border-radius: 25px; /* حواف دائرية */
-    padding: 10px 30px; /* حجم الزر الداخلي */
-    text-align: center; /* توسيط النص داخل الزر */
+    background-color: #b78b2bce; 
+    color: #fff; 
+    border-radius: 25px; 
+    padding: 10px 30px;
+    text-align: center; 
     display: inline-block;
 }
 
-/* عند المرور فوق الزر */
 .btn-custom:hover {
-    background-color: #b78b2bf4; /* لون التمرير فوق الزر */
+    background-color: #b78b2bf4; 
     color: #fff;
     text-decoration: none;
 }

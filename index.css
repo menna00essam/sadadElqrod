@@ -183,47 +183,43 @@ width: 100%;
   }
 }
 .accordion-button:focus {
-  box-shadow: none; /* إزالة تأثير الظل عند الـ focus */
-  outline: none; /* إزالة الخط الأزرق عند الـ focus */
+  box-shadow: none; 
+  outline: none; 
 }
 
-/* تخصيص لون الأسهم */
 .accordion-button::after {
-  color: lightgray; /* اللون الرمادي الفاتح */
+  color: lightgray; 
 }
 
 .accordion-button.collapsed::after {
-  color: #b78b2bce; /* اللون عند الضغط على الزر */
+  color: #b78b2bce; 
 }
 
-/* تخصيص الأزرار داخل الـ Accordion */
 .accordion-button {
-  background-color: #b78b2bce; /* اللون عند التمرير */
-  color: #fff; /* اللون النصي */
+  background-color: #b78b2bce; 
+  color: #fff; 
   border: 1px solid #ddd;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* عند التمرير فوق الزر (hover) */
 .accordion-button:hover {
-  background-color: #b78b2bce; /* اللون عند التمرير */
-  color: #fff; /* اللون النصي عند التمرير */
-}
+  background-color: #b78b2bce; 
+  color: #fff;
+} 
 
 .accordion-button:not(.collapsed):not(:focus) {
-  background-color: #b78b2bce; /* اللون عند التوسيع */
-  color: #fff; /* اللون النصي عند التوسيع */
+  background-color: #b78b2bce; 
+  color: #fff; 
 }
 .footer{
   background-color: #b78b2bce;
 }
 
-/* الزر الطاير */
 .floating-btn {
   position: fixed;
-  bottom: 30px; /* المسافة من الأسفل */
-  right: 30px; /* المسافة من اليمين */
-  background-color: #b78b2bce; /* لون الزرار */
+  bottom: 30px; 
+  right: 30px; 
+  background-color: #b78b2bce; 
   color: white;
   border: none;
   border-radius: 50%;
@@ -232,53 +228,48 @@ width: 100%;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   z-index: 1000;
-  opacity: 0; /* يبدأ الزر غير مرئي */
-  pointer-events: none; /* لا يمكن التفاعل معه عند عدم ظهوره */
-  transition: opacity 0.5s ease-in-out, background-color 0.3s ease; /* التأثيرات على الظهور واللون */
+  opacity: 0;
+  pointer-events: none; 
+  transition: opacity 0.5s ease-in-out, background-color 0.3s ease; 
 }
 
 .floating-btn.visible {
-  opacity: 1; /* يظهر الزر عند إضافة الفئة "visible" */
-  pointer-events: auto; /* يمكن التفاعل مع الزر */
+  opacity: 1; 
+  pointer-events: auto; 
 }
 
 .floating-btn:hover {
-  background-color: #d88e4d; /* تغيير اللون عند التمرير */
+  background-color: #d88e4d; 
 }
 
 
-/* إضافة أيقونة السهم باستخدام FontAwesome */
 .fas {
-  font-size: 20px; /* تغيير حجم الأيقونة */
+  font-size: 20px; 
 }
-/* تعيين الخلفية وتحسين الصورة */
 
-/* الطبقة overlay فوق الصورة */
 .finance {
   background-image: url("./assests/الرياض.jpg");
   background-size: cover;
   background-position: center center;
-  background-repeat: no-repeat;  /* منع تكرار الصورة */
+  background-repeat: no-repeat; 
   background-attachment: fixed;
   padding: 100px 0;
   position: relative;
   text-align: center;
   color: white;
-  overflow: hidden;  /* تأكد من أن النص المتحرك لا يخرج عن الحدود */
+  overflow: hidden;  
 }
 
-/* طبقة overlay */
 .finance_overlay {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5); /* تأثير نصف شفاف */
+  background: rgba(0, 0, 0, 0.5); 
   z-index: 1;
 }
 
-/* النص "خصم 20% بمناسبة افتتاح فرع أبها فقط" مع إضافة تأثير الحركة */
 .discount-text {
   position: absolute;
   top: 20%;
@@ -291,7 +282,6 @@ width: 100%;
   animation: slideIn 3s ease-out infinite alternate;
 }
 
-/* التأثير الحركي للنص */
 @keyframes slideIn {
   0% {
       top: 20%;
@@ -307,7 +297,6 @@ width: 100%;
   }
 }
 
-/* تصميم الزر */
 .applynow_custom_btn {
   background-color: #4CAF50;
   color: white;
@@ -318,7 +307,7 @@ width: 100%;
   position: relative;
   overflow: hidden;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  z-index: 2; /* جعل الزر فوق كل العناصر */
+  z-index: 2; 
 }
 
 .applynow_custom_btn::before {
@@ -347,34 +336,30 @@ width: 100%;
   transform: scale(0.98);
 }
 
-/* تعديل النص والعناوين */
-/* الطبقة overlay فوق الصورة */
 .finance {
   background-image: url("./assests/الرياض.jpg");
   background-size: cover;
   background-position: center center;
-  background-repeat: no-repeat;  /* منع تكرار الصورة */
+  background-repeat: no-repeat;  
   background-attachment: fixed;
   padding: 100px 0;
   position: relative;
   text-align: center;
   color: white;
-  overflow: hidden;  /* تأكد من أن النص المتحرك لا يخرج عن الحدود */
-  margin-top: 80px;  /* إضافة مساحة لتجنب تداخل الـ navbar */
+  overflow: hidden; 
+  margin-top: 80px; 
 }
 
-/* طبقة overlay */
 .finance_overlay {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5); /* تأثير نصف شفاف */
+  background: rgba(0, 0, 0, 0.5); 
   z-index: 1;
 }
 
-/* النص "خصم 20% بمناسبة افتتاح فرع أبها فقط" مع إضافة تأثير الحركة */
 .discount-text {
   position: absolute;
   top: 20%;
@@ -387,7 +372,6 @@ width: 100%;
   animation: slideIn 3s ease-out infinite alternate;
 }
 
-/* التأثير الحركي للنص */
 @keyframes slideIn {
   0% {
       top: 20%;
@@ -403,7 +387,6 @@ width: 100%;
   }
 }
 
-/* تصميم الزر */
 .applynow_custom_btn {
   background-color: #4CAF50;
   color: white;
@@ -414,8 +397,8 @@ width: 100%;
   position: relative;
   overflow: hidden;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  z-index: 2; /* جعل الزر فوق كل العناصر */
-  margin-top: 20px;  /* تقليل المسافة بين النص والزر */
+  z-index: 2;
+  margin-top: 20px;  
 }
 
 .applynow_custom_btn::before {
@@ -444,7 +427,6 @@ width: 100%;
   transform: scale(0.98);
 }
 
-/* الطبقة overlay فوق الصورة */
 .finance {
   background-image: url("./assests/الرياض.jpg");
   background-size: cover;
@@ -455,23 +437,21 @@ width: 100%;
   position: relative;
   text-align: center;
   color: white;
-  overflow: hidden;  /* تأكد من أن النص المتحرك لا يخرج عن الحدود */
-  margin-top: 80px;  /* إضافة مساحة لتجنب تداخل الـ navbar */
-  z-index: 0; /* جعل الـ z-index أقل من الـ navbar */
+  overflow: hidden; 
+  margin-top: 80px; 
+  z-index: 0; 
 }
 
-/* طبقة overlay */
 .finance_overlay {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5); /* تأثير نصف شفاف */
-  z-index: 1; /* التأكد من أن الـ overlay يظهر تحت الـ navbar */
+  background: rgba(0, 0, 0, 0.5); 
+  z-index: 1; 
 }
 
-/* النص "خصم 20% بمناسبة افتتاح فرع أبها فقط" مع إضافة تأثير الحركة */
 .discount-text {
 position: absolute;
 top: 20%;
@@ -481,22 +461,21 @@ font-size: 36px;
 font-weight: bold;
 color: #FFD700;
 z-index: 2;
-text-align: center; /* محاذاة النص */
+text-align: center; 
 }
 
 .discount-amount {
-display: block; /* وضع خصم 20% في سطر منفصل */
+display: block; 
 animation: slideIn 3s ease-out infinite alternate;
 }
 
 .opening-note {
-font-size: 24px; /* يمكن تعديل الحجم حسب الحاجة */
+font-size: 24px; 
 color: #FFD700;
-margin-top: 10px; /* المسافة بين النصين */
-font-weight: normal; /* ضبط الوزن ليكون ثابت */
+margin-top: 10px; 
+font-weight: normal; 
 }
 
-/* التأثير الحركي للنص */
 @keyframes slideIn {
 0% {
   top: 20%;
@@ -513,7 +492,6 @@ font-weight: normal; /* ضبط الوزن ليكون ثابت */
 }
 
 
-/* تصميم الزر */
 .applynow_custom_btn {
   background-color: #a2aca200;
   color: white;
@@ -524,23 +502,22 @@ font-weight: normal; /* ضبط الوزن ليكون ثابت */
   position: relative;
   overflow: hidden;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  z-index: 2; /* جعل الزر فوق كل العناصر */
-  margin-top: 250px;  /* تقليل المسافة بين النص والزر */
+  z-index: 2; 
+  margin-top: 250px;  
 }
 
 .applynow_custom_btn {
-  background-color: transparent; /* إزالة الخلفية */
-  color: white; /* الحفاظ على اللون الأبيض للنص */
+  background-color: transparent; 
   padding: 12px 24px;
-  border: 2px solid #b78b2bce; /* إضافة حد باللون الذي تريده، في هذه الحالة الذهب */
+  border: 2px solid #b78b2bce; 
   border-radius: 8px;
   text-decoration: none;
   font-size: 16px;
   position: relative;
   overflow: hidden;
   transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease; /* إضافة تأثير على الحد */
-  z-index: 2; /* جعل الزر فوق كل العناصر */
-  margin-top: 250px; /* المسافة بين النص والزر */
+  z-index: 2; 
+  margin-top: 250px; 
 }
 
 .applynow_custom_btn:hover {
@@ -556,8 +533,6 @@ font-weight: normal; /* ضبط الوزن ليكون ثابت */
   transform: scale(0.98);
 }
 
-/* تعديل النص والعناوين */
-/* Styling for Finance Section */
 .finance {
   position: relative;
   background-color: #f8f9fa;
@@ -570,7 +545,7 @@ font-weight: normal; /* ضبط الوزن ليكون ثابت */
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* إضاءة داكنة للطبقة الخلفية */
+  background: rgba(0, 0, 0, 0.5); 
 }
 
 .finance_inner {
@@ -599,18 +574,16 @@ font-weight: normal; /* ضبط الوزن ليكون ثابت */
   margin-bottom: 20px;
 }
 
-/* تخصيص زر "تقدّم بطلبك الآن" */
 .applynow_custom_btn_parent {
-  margin-top: -180px; /* زيادة المسافة بين الزر والنص */
+  margin-top: -180px; 
 }
 
-/* تعديل النص "خصم" و "20%" */
 .discount-text {
   position: relative;
-  top: 10%; /* تغيير الموضع لتحريك النص إلى الأعلى */
+  top: 10%; 
   left: 50%;
   transform: translateX(-50%);
-  text-align: center; /* محاذاة النص في الوسط */
+  text-align: center; 
 }
 
 .discount-title {
@@ -618,29 +591,27 @@ font-weight: normal; /* ضبط الوزن ليكون ثابت */
   font-weight: bold;
   color: #b78b2bce;
   text-align: center;
-  margin-bottom: 20px; /* زيادة المسافة أسفل "خصم" */
+  margin-bottom: 20px; 
 }
 
 .discount-amount {
-  font-size: 150px; /* تصغير حجم "20%" */
+  font-size: 150px; 
   font-weight: bold;
   color: #b78b2bce;
   animation: slideIn 3s ease-out infinite alternate;
-  margin-top: -30px; /* تقليل المسافة بين النص المتحرك والنص الثابت */
+  margin-top: -30px; 
 }
 
-/* تعديل النص "بمناسبة افتتاح فرع أبها" ليظهر تحت 20% */
 .opening-note {
   font-size: 42px;
   color: #b78b2bce;
-  margin-top: 10px; /* زيادة المسافة بين النص "20%" و "بمناسبة افتتاح فرع أبها" */
+  margin-top: 10px; 
   text-align: center;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
 }
 
-/* التأثير الحركي للنص */
 @keyframes slideIn {
   0% {
     opacity: 0;
@@ -656,7 +627,6 @@ font-weight: normal; /* ضبط الوزن ليكون ثابت */
   }
 }
 
-/* التأثير على زر التقديم */
 .applynow_custom_btn {
   font-size: 20px;
   padding: 10px 30px;
@@ -670,13 +640,12 @@ font-weight: normal; /* ضبط الوزن ليكون ثابت */
   background-color: #957123;
 }
 
-/* التعديل ليظهر بشكل جيد في الشاشات الصغيرة */
 @media (max-width: 768px) {
   .discount-title {
     font-size: 40px;
   }
   .discount-amount {
-    font-size: 100px; /* تصغير حجم "20%" في الشاشات الصغيرة */
+    font-size: 100px; 
   }
   .opening-note {
     font-size: 36px;
@@ -687,13 +656,12 @@ font-weight: normal; /* ضبط الوزن ليكون ثابت */
   }
 }
 
-/* التعديل للهواتف */
 @media (max-width: 480px) {
   .discount-title {
     font-size: 32px;
   }
   .discount-amount {
-    font-size: 80px; /* تصغير أكبر في الشاشات الصغيرة */
+    font-size: 80px; 
   }
   .opening-note {
     font-size: 30px;
@@ -730,7 +698,6 @@ font-weight: normal; /* ضبط الوزن ليكون ثابت */
   justify-content: center;
 }
 
-/* النص */
 .fw-bold {
   font-size: 2.5rem;
   font-weight: bold;
@@ -743,7 +710,6 @@ font-weight: normal; /* ضبط الوزن ليكون ثابت */
   font-family: 'Cairo', sans-serif;
 }
 
-/* الصورة */
 .img-fluid {
   max-width: 100%;
   height: auto;
@@ -751,42 +717,38 @@ font-weight: normal; /* ضبط الوزن ليكون ثابت */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* تحسين المظهر في الشاشات الصغيرة */
 @media (max-width: 768px) {
   .fw-bold {
-    font-size: 2rem; /* تقليل حجم الخط في التابلت */
-    margin-bottom: 15px; /* إضافة مسافة بين النصوص */
+    font-size: 2rem; 
+    margin-bottom: 15px; 
   }
 
   .lead {
-    font-size: 1rem; /* تقليل حجم الخط في التابلت */
+    font-size: 1rem; 
   }
 
   .row.align-items-center {
     flex-direction: column;
   }
 
-  /* تعديل ترتيب الأعمدة بين النص والصورة */
   .col-lg-6, .col-md-12 {
     text-align: center;
   }
 
-  /* إضافة مسافة بين النص والصورة في الموبايل والتابلت */
   .img-fluid {
     width: 80%;
     margin-top: 20px;
   }
 }
 
-/* تحسين المظهر في الشاشات الصغيرة جداً (الموبايل) */
 @media (max-width: 480px) {
   .fw-bold {
-    font-size: 1.8rem; /* تقليل حجم الخط في الموبايل */
-    margin-bottom: 20px; /* إضافة مسافة بين النصوص */
+    font-size: 1.8rem; 
+    margin-bottom: 20px; 
   }
 
   .lead {
-    font-size: 0.9rem; /* تقليل حجم الخط في الموبايل */
+    font-size: 0.9rem; 
   }
 
   .img-fluid {
@@ -794,7 +756,6 @@ font-weight: normal; /* ضبط الوزن ليكون ثابت */
     margin-top: 20px;
   }
 
-  /* تقليل المسافة بين النص والصورة في الشاشات الصغيرة جداً */
   .my-5.section-hero {
     padding: 3rem 0;
   }
@@ -830,7 +791,6 @@ font-weight: normal; /* ضبط الوزن ليكون ثابت */
   font-family: 'Cairo', sans-serif;
 }
 
-/* الصورة */
 .img-fluid {
   max-width: 100%;
   height: auto;
@@ -838,15 +798,14 @@ font-weight: normal; /* ضبط الوزن ليكون ثابت */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* تحسين المظهر في الشاشات الصغيرة */
 @media (max-width: 768px) {
   .fw-bold {
-    font-size: 2rem; /* تقليل حجم الخط في التابلت */
-    margin-bottom: 15px; /* إضافة مسافة بين النصوص */
+    font-size: 2rem;
+    margin-bottom: 15px; 
   }
 
   .lead {
-    font-size: 1rem; /* تقليل حجم الخط في التابلت */
+    font-size: 1rem; 
   }
 
   .row.align-items-center {
@@ -854,7 +813,6 @@ font-weight: normal; /* ضبط الوزن ليكون ثابت */
     text-align: center;
   }
 
-  /* تعديل ترتيب الأعمدة بين النص والصورة */
   .col-lg-6, .col-md-12 {
     text-align: center;
     margin-bottom: 20px;
@@ -862,24 +820,23 @@ font-weight: normal; /* ضبط الوزن ليكون ثابت */
 
   .img-fluid {
     width: 90%;
-    margin-top: 20px; /* مسافة بين النص والصورة */
+    margin-top: 20px; 
   }
 }
 
-/* تحسين المظهر في الشاشات الصغيرة جداً (الموبايل) */
 @media (max-width: 480px) {
   .fw-bold {
-    font-size: 1.8rem; /* تقليل حجم الخط في الموبايل */
-    margin-bottom: 20px; /* إضافة مسافة بين النصوص */
+    font-size: 1.8rem; 
+    margin-bottom: 20px; 
   }
 
   .lead {
-    font-size: 0.9rem; /* تقليل حجم الخط في الموبايل */
+    font-size: 0.9rem; 
   }
 
   .img-fluid {
     width: 90%;
-    margin-top: 20px; /* مسافة بين النص والصورة */
+    margin-top: 20px;
   }
 
   .my-5.section-hero1 {
@@ -894,7 +851,6 @@ font-weight: normal; /* ضبط الوزن ليكون ثابت */
 
 
 
-/* تغيير ترتيب الأعمدة في الشاشات الصغيرة */
 @media (max-width: 991px) {
   .hero-row {
     display: flex;
@@ -903,25 +859,23 @@ font-weight: normal; /* ضبط الوزن ليكون ثابت */
   }
 
   .col-lg-5 {
-    width: 100%; /* جعل الأعمدة تأخذ عرض كامل في الشاشات الصغيرة */
-    margin-bottom: 20px; /* إضافة مسافة بين الأعمدة */
+    width: 100%; 
+    margin-bottom: 20px; 
   }
 
-  /* تخصيص المسافات بين الأعمدة */
   .hero-content-left,
   .hero-content-right {
     margin-bottom: 20px;
   }
 }
 
-/* تخصيص المسافة بين النص الأول والنص الثاني */
 .hero-content-left,
 .hero-content-right {
   background-color: #f9f9f9;
   padding: 30px;
   border-radius: 10px;
   flex: 1;
-  margin-bottom: 30px; /* إضافة مسافة بين الأعمدة */
+  margin-bottom: 30px; 
 }
 
 @media (max-width: 991px) {
@@ -932,13 +886,12 @@ font-weight: normal; /* ضبط الوزن ليكون ثابت */
   }
 
   .col-lg-5 {
-    width: 100%; /* جعل الأعمدة تأخذ عرض كامل في الشاشات الصغيرة */
-    margin-bottom: 20px; /* إضافة مسافة بين الأعمدة */
+    width: 100%; 
+    margin-bottom: 20px; 
   }
 
-  /* تخصيص المسافة بين الأعمدة */
   .hero-content-left,
   .hero-content-right {
-    margin-bottom: 30px; /* إضافة مسافة بين النصوص */
-  }
+    margin-bottom: 30px; 
+}
 }
